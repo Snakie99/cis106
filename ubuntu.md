@@ -1,4 +1,4 @@
-#Ubuntu
+# Ubuntu
 
 ![UbuntuLogo](UbuntuLogo.svg)
 
@@ -16,8 +16,8 @@ open-source  software and proprietary software developed by the community-suppor
 established  by Ian Murdock on August 16, 1993. 
 Source: https://en.wikipedia.org/wiki/Debian
 
-##Ubuntu Distributions
-##Official distributions
+## Ubuntu Distributions
+## Official distributions
 * Desktop
 * Edubuntu
 * Kubunutu
@@ -30,18 +30,18 @@ Source: https://en.wikipedia.org/wiki/Debian
 * Ubuntu Cinnamon
 * Ubuntu Kylin
 
-###Other
+### Other
 1. Ubuntu Cloud Images
 2. Ubuntu Core
 3. Ubuntu Server
 4. Ubuntu Touch
 
-###Unofficial distributions
+### Unofficial distributions
 Ubuntu DDE
 Ubuntu Web
 
-##Linux Commands
-###Some Basic Linux Commands
+## Linux Commands
+### Some Basic Linux Commands
 * `date:` displays the current time and date
 * `cal:` displays a calendar of the current month
 * `df:` displays the current amount of free space on our disk drives
@@ -49,7 +49,7 @@ Ubuntu Web
 * `uname:` displays information about your system
 * `clear:` clears the screen
 
-###A Basic bash script 
+### A Basic bash script 
 ```
 #!/bin/bash
 echo "The current date and time: "
@@ -60,7 +60,7 @@ echo "Total free memory"
 free -h
 ```
 
-##Commands to navigate the filesystem
+## Commands to navigate the filesystem
 | command | Description                |
 | ------- | -------------------------- |
 | ls      | list files and directories |

@@ -1,13 +1,13 @@
 ![johnDoeImage](johndoe.jpeg)
 
-###John Doe
+### John Doe
 
 Arlington, GA 39813 ◆ 555 555 5555 ◆ example@example.com
 
-####Professional Summary
+#### Professional Summary
 Knowledgeable Customer Service Representative with problem-solving abilities capable of building customer rapport.  Effectively handles customer concerns with clear communication and patience.  Able to take on various tasks at a customer-focused environment.
 
-####Work History
+#### Work History
 **Customer Service Representative**, 06/2020 to Current *Macy's – Arlington,  GA*
 
 * Offer buying advice to customers to ensure product satisfaction.
@@ -27,14 +27,14 @@ Knowledgeable Customer Service Representative with problem-solving abilities cap
 * Answered questions about store policies and addressed customer concerns.
 * Used POS system to enter orders and process payments.
 
-####Skills
+#### Skills
 
 | Technical           | Communications       |
 | ------------------- | -------------------- |
 | Microsoft Suite     | Complaint resolution |
 | Programing (Python) | Sales expertise      |
 
-####Education
+#### Education
 
 | Degree            | School | Year |
 | ----------------- |--------|------|
