@@ -1,7 +1,7 @@
 ---
-Name: Your name here
+Name: Romelo Deida
 Course: CIS-106
-Semester: Spring 23
+Semester: Spring 24
 Instructor: R. Alberto
 ---
 # Deliverable 2 Submission
