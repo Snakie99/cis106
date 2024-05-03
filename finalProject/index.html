@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>deliverable3.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="how-to-setup-a-web-server-in-virtualbox-and-ubuntu-server">How to Setup a Web Server in VirtualBox and Ubuntu Server</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Setting up a webserver is pretty to the point.  As long as there are no spelling errors it will be a quick and easy thing to do.  The server will let you host your own pages and upload files to the server from your host machine with ease.</p>
+<h2 id="basic-terminology-that-the-reader-must-know">Basic terminology that the reader must know</h2>
+<h3 id="virtualbox">Virtualbox</h3>
+<p><img src="Virtualbox_logo.png" alt="vbox"><br>
+Virtualbox is software that enables you to create virtual machines, computer OS's inside of a computer!  You can use these virtual machines to do any task, from testing files for viruses in a safe environment, to use a different OS because you feel like it, to making a web server.</p>
+<h3 id="ubuntu">Ubuntu</h3>
+<p><img src="ubuntu_logo.jpg" alt="ubuntu"><br>
+Ubuntu is a version of linux that can come in a desktop version or a web server version.  The version for this tutorial will be the webserver version, but the desktop one is a very beginner friendly gateway into linux, so I say give it a try!  An Ubuntu Server is apart of the larger set of Ubuntu products and OS developed by Canonical Ltd.
+It's a specific addition that's different from the Ubuntu you use for your desktop, and is used to
+facilitate installation on servers. It can be used to setup a home network, and can assign something
+called &quot;Super Users&quot;, which have an easier time managing the network.</p>
+<h3 id="apache">Apache</h3>
+<p><img src="Apache-Logo.png" alt="apache"><br>
+Apache powers many websites that people use everyday, making it a pioneer for web server apps. It's available
+on all platforms, default server for all CPanel shared hosting, which makes it easy to set up and
+change sites, makes scripting easy with Lua, and has support for HTTP/2, compression, static files,
+and load balancing.</p>
+<h3 id="ssh">SSH</h3>
+<p><img src="ssh.png" alt="ssh"><br>
+SSH, also known as Secure Shell or Secure Socket Shell, is a network protocol that gives users, mainly
+system admins, a secure way to access a computer over an unsecured network. A SSH server will
+always run using TCP on port 22. TCP is Transmission Control Protocol.</p>
+<h3 id="firewall">Firewall</h3>
+<p><img src="ufw.jpeg" alt="ufw"><br>
+A system designed to prevent unauthorized access from entering a private network. It blocks
+unwanted traffic, and allows wanted traffic. A safety barrier between a private network and the
+internet.</p>
+<h2 id="step-by-step-instructions">Step-by-step instructions</h2>
+<h3 id="part-1-virtual-machine">Part 1 Virtual Machine</h3>
+<p><img src="Vbox_Ubuntu_Server.png" alt="ubuntu_server">
+<img src="min_required.png" alt="required+specs"></p>
+<h3 id="part-2-install-ubuntu-server">Part 2 Install Ubuntu Server</h3>
+<p>After you creat your VM, run it and install Ubuntu Server.
+<img src="step1-grub.png" alt="step1"></p>
+<p>Select English as the language and then update the installer if you get the prompt to.
+<img src="step-3-update-installer.png" alt="step3"></p>
+<p>Hit done for the default keyboard layout, or change it to your version if not default, then make sure Ubuntu Server is selected as the base.
+<img src="Step-5-install-type.png" alt="step5"></p>
+<p>Since we are installing Ubuntu in a virtual machine that at the moment is configured to have a NAT network interface card, as long as your host PC has internet connection, you should automatically get an IP address. If you don’t, something is wrong with your VM, Host Machine, or Internet Connection.
+<img src="step-6-ip-address.png" alt="step6"></p>
+<p>Leave this part empty as we are not using a proxy.
+<img src="step-7-proxy.png" alt="step7"></p>
+<p>We will use the default mirror so there is no need to change this
+<img src="step-7-proxy.png" alt="step8"></p>
+<p>This step is to format our disk. Here we will select the entire disk. To move around here use either the arrow keys or the tab key.
+<img src="step-9-disk.png" alt="step9"></p>
+<p>Hit Done or continue until you get to the install SSH.  We will install it now.
+<img src="step-12-ssh.png" alt="step12"></p>
+<p>Hit Done to skip any addons and let the server install, it'll ask to reboot once finished.
+<img src="step-15-reboot-now.png" alt="step15"></p>
+<p>Once it reboots, make sure you hit enter here.  And you're set!
+<img src="step-16-press-enter.png" alt="step16"></p>
+<h3 id="part-3-install-apache">Part 3 Install Apache</h3>
+<p>Follow these commands in order and you'll be all set with Apache.</p>
+<ul>
+<li>sudo apt update; sudo apt upgrade -y
+<ul>
+<li><img src="update-ubuntu-server.gif" alt="update_server"></li>
+</ul>
+</li>
+<li>sudo apt install apache2 -y
+<ul>
+<li><img src="install-apache.gif" alt="install_apache"></li>
+</ul>
+</li>
+</ul>
+<h3 id="part-4-setup-ssh">Part 4 Setup SSH</h3>
+<p>Follow these commands to setup ssh in the server.</p>
+<ul>
+<li>sudo ufw enable</li>
+<li>sudo ufw allow 'Apache'</li>
+<li>sudo ufw allow 'OpenSSH'</li>
+<li>sudo ufw status
+<ul>
+<li><img src="firewallcheck.gif" alt="firewallcheck"></li>
+</ul>
+</li>
+<li>systemctl status apache2 --no-pager</li>
+<li>systemctl status ssh --no-pager
+<ul>
+<li>Both should show running, if not, run this command.</li>
+<li>sudo systemctl restart apache2 ssh</li>
+</ul>
+</li>
+<li>Setup a network adapter, either with a bridged adapter, or via port fowarding.
+<ul>
+<li>For port fowarding, follow these steps.</li>
+<li>Make sure SSH is installed in both the client and the server:
+<ul>
+<li>sudo apt install openssh -y</li>
+</ul>
+</li>
+<li>In the server, the SSH service must be already running, if it is not running, use this command to enable it and start it:
+<ul>
+<li>sudo systemctl enable ssh; sudo systemctl start ssh</li>
+</ul>
+</li>
+<li>You will need to get the IP address of the server. Use this command to get the IP address:
+<ul>
+<li>hostname -I</li>
+</ul>
+</li>
+<li>Additionally, you can setup a static IP address in your server. Here is a guide on how to do it. If you are doing this project in your laptop, I advise to stay away from setting up static IP addresses.</li>
+<li>On the client computer use this command:
+<ul>
+<li><img src="sshsyntax.png" alt="sshsyntax"></li>
+</ul>
+</li>
+<li>If you are using port forwarding, your command would be:
+<ul>
+<li>ssh -p 2222 username@127.0.0.1</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="part-5-setup-virtual-hosts">Part 5 Setup virtual hosts</h3>
+<ul>
+<li>
+<p>Create the directory for mywebsite as follows:</p>
+<ul>
+<li>sudo mkdir /var/www/mywebsite</li>
+</ul>
+</li>
+<li>
+<p>Modify the ownership of mywebsite so that it is now owned by your user instead of root</p>
+<ul>
+<li>sudo chown -R $USER:$USER /var/www/mywebsite</li>
+</ul>
+</li>
+<li>
+<p>Now let’s change the file permission so that the owner can read, write, and execute the files while granting only read and execute permissions to groups and others:</p>
+<ul>
+<li>sudo chmod -R 755 /var/www/mywebsite</li>
+</ul>
+</li>
+<li>
+<p>Now lets create a simple html document to be served from our new virtual host. Create a document with the nano text editor called index.html in the /var/www/mywebsite/ directory:</p>
+<ul>
+<li>sudo nano /var/www/mywebsite/index.html.</li>
+</ul>
+</li>
+<li>
+<p>Once the new document opens, type the following text:</p>
+</li>
+<li>
+<p>&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;My First Website<br>
+&lt;/title&gt;
+/head&gt;
+&lt;body&gt;
+&lt;h1&gt;This is a sample document!
+&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</p>
+</li>
+<li>
+<p>Save and close the file when you are finished. You can do this by pressing CTRL + X, then Y and ENTER.</p>
+</li>
+<li>
+<p>Now we need to create a virtual host file so that this new content can be served. The default configuration is located in /etc/apache2/sites-available/000-default.conf However, we do not need to touch this file, we can instead create a new one as it is best practice. To create a new config file, we are going to use nano again:</p>
+<ul>
+<li>sudo nano /etc/apache2/sites-available/mywebsite.conf</li>
+</ul>
+</li>
+<li>
+<p>Add the following text to the domain config file:</p>
+<ul>
+<li>&lt;VirtualHost *:80&gt;
+ServerAdmin webmaster@localhost
+ServerName mywebsite
+ServerAlias www.mywebsite
+DocumentRoot /var/www/mywebsite
+ErrorLog ${APACHE_LOG_DIR}/error.log
+CustomLog ${APACHE_LOG_DIR}/access.log combined
+&lt;/VirtualHost&gt;</li>
+</ul>
+</li>
+<li>
+<p>Save and close the file when you are finished. You can do this by pressing CTRL + X, then Y and ENTER.</p>
+</li>
+<li>
+<p>Now enable the site with the following command:</p>
+<ul>
+<li>sudo a2ensite mywebsite.conf</li>
+</ul>
+</li>
+<li>
+<p>Now lets disable the default domain:</p>
+<ul>
+<li>sudo a2dissite 000-default.conf</li>
+</ul>
+</li>
+<li>
+<p>Before we can refresh the configuration, we need to add a configuration line to the apache2.conf file. Open the file in nano:</p>
+<ul>
+<li>sudo nano /etc/apache2/apache2.conf</li>
+</ul>
+</li>
+<li>
+<p>Add the following line at the end of the file:</p>
+<ul>
+<li>ServerName 127.0.0.1</li>
+</ul>
+</li>
+<li>
+<p>Save and close the file when you are finished. You can do this by pressing CTRL + X, then Y and ENTER.</p>
+</li>
+<li>
+<p>Now you can test the configuration for errors:</p>
+<ul>
+<li>sudo apache2ctl configtest</li>
+</ul>
+</li>
+<li>
+<p>The output of the command should look like this:</p>
+<ul>
+<li>Syntax OK</li>
+</ul>
+</li>
+<li>
+<p>If there are no errors, restart Apache to apply the changes.</p>
+</li>
+<li>
+<p>Now, if you open a web browser in your host computer and go the URL: http://ip.address.of.your.server/ your index.html document should load.</p>
+</li>
+</ul>
+
+</body>
+</html>
