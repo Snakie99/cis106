@@ -1,6 +1,7 @@
 # Romelo Deida
 
-![resume_image](resume_imgs/resume_image.jpg)
+![resume_image](resume_image.jpg)
+
 #### 123 Alphabet St, Somewhere, NJ 12345
 ### Professional Summary
 * Knowledgeable Customer Service Representative with problem-solving abilities capable of building customer
